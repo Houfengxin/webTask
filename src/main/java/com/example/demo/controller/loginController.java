@@ -28,26 +28,30 @@ public class loginController {
     public String index(){
         return "index";
     }
-//    @RequestMapping("/linear")
-//    public String linear(){
-//        return "linear.html";
-//    }
-//    @RequestMapping("/hash")
-//    public String hash(){
-//        return "hash.html";
-//    }
-//    @RequestMapping("/tree")
-//    public String tree(){
-//        return "tree.html";
-//    }
-//    @RequestMapping("/graph")
-//    public String graph(){
-//        return "graph.html";
-//    }
-//    @RequestMapping("/algorithm")
-//    public String algorithm(){
-//        return "algorithm.html";
-//    }
+    @RequestMapping("/linear")
+    public String linear(){
+        return "linear.html";
+    }
+    @RequestMapping("/array")
+    public String array(){
+        return "array.html";
+    }
+    @RequestMapping("/hash")
+    public String hash(){
+        return "hash.html";
+    }
+    @RequestMapping("/tree")
+    public String tree(){
+        return "tree.html";
+    }
+    @RequestMapping("/graph")
+    public String graph(){
+        return "graph.html";
+    }
+    @RequestMapping("/algorithm")
+    public String algorithm(){
+        return "algorithm.html";
+    }
     @RequestMapping("/checkuser")
     public String checkuser(HttpServletRequest request,
                             HttpServletResponse response,
