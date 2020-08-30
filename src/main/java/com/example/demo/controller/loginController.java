@@ -19,63 +19,31 @@ public class loginController {
     @Autowired
     private UserMapper userMapper;
 
-    @GetMapping("/login")
+    /*@GetMapping("/login")
     @RequestMapping("/login")
     public String login(){
         return "login";
-    }
+    }*/
+
     @RequestMapping("/index")
     public String index(){
         return "index";
     }
-    @RequestMapping("/linear")
-    public String linear(){
-        return "linear.html";
-    }
-    @RequestMapping("/array")
-    public String array(){
-        return "array.html";
-    }
-    @RequestMapping("/hash")
-    public String hash(){
-        return "hash.html";
-    }
-    @RequestMapping("/tree")
-    public String tree(){
-        return "tree.html";
-    }
-    @RequestMapping("/graph")
-    public String graph(){
-        return "graph.html";
-    }
-    @RequestMapping("/algorithm")
-    public String algorithm(){
-        return "algorithm.html";
-    }
-    @RequestMapping("/checkuser")
-    public String checkuser(HttpServletRequest request,
-                            HttpServletResponse response,
-                            Map<String,Object> map){
+
+    @RequestMapping("/login")
+    public String login(HttpServletRequest request,Map<String,Object> map){
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        HttpSession session = request.getSession();
 
-        User user = userMapper.checkuser(username,password);
-
-        if(user!=null){
-            String token = UUID.randomUUID().toString();
-            user.setToken(token);
-            userMapper.updateUser(user);
-            response.addCookie(new Cookie("token",token));
-            session.setAttribute("loginUser",user);
-            map.put("msg0","欢迎"+username);
-            map.put("user",user);
-            //model.addAttribute("user",username);
-
-            return "/index";
-        }else {
-            map.put("msg","login fail");
-            return "/login";
+        User loginuser = userMapper.login(username, password);
+        System.out.println(loginuser);
+        if(loginuser!=null){
+            map.put("msg2","the user "+loginuser+" login");
+            return "index";
+        }
+        else{
+            map.put("msg2","仅供学习使用！");
+            return "login";
         }
     }
 }

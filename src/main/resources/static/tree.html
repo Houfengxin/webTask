@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>树详情</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
-    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
-    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
-    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="./css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="./lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="./lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" href="./css/me.css" th:href="@{/css/me.css}">
     <style>
         p{
             text-indent: 2em !important;
@@ -22,12 +22,12 @@
       <!--为了适应手机端查看页面，添加stackable属性，代表可堆叠，给grid之前加上stackable-->
       <div class="ui inverted secondary stackable menu">
         <h2 class="ui teal header item">数据结构</h2>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>线性表</a>
+          <a href="linear.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>线性表</a>
           <a href="array.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>数组</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>散列表</a>
-          <a href="#" class="active m-item item m-mobile-hide"><i class="mini file alternate icon"></i>树</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>图</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>算法</a>
+          <a href="hash.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>散列表</a>
+          <a href="tree.html" class="active m-item item m-mobile-hide"><i class="mini file alternate icon"></i>树</a>
+          <a href="graph.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>图</a>
+          <a href="algorithm.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>算法</a>
           <div class="right m-item item m-mobile-hide">
               <!-- transparent搜索框显示为透明 inverted颜色反转 -->
               <div class="ui icon inverted transparent input">
@@ -64,7 +64,7 @@
       </div>
       <div class="ui  attached segment">
           <!--图片区域-->
-          <img src="../static/images/tree1.png" th:src="@{/images/tree1.png}" alt="" class="ui fluid rounded image">
+          <img src="./images/tree1.png" th:src="@{/images/tree1.png}" alt="" class="ui fluid rounded image">
       </div>
       <div class="ui attached padded segment">
           <!--内容部分-->
@@ -264,7 +264,7 @@
      <p>对于AVL树而言，其所有节点的平衡因子只可能有三个取值：-1，0和1。所以对于AVL树，每插入一个节点，我们需要对其进行维护，使其仍
          为AVL树。新插入一个节点后，其若不为AVL树，那么其根节点最大的BF只可能为2（因为之前的BF最大为1），可通过旋转操作，即增大较低子树的高度，减小较高子树的高度，使得其变得平衡。</p>
      <div style="text-align: center;">
-           <img alt="" src="../static/images/tree2.jpg" th:src="@{/images/tree2.jpg}" style="width: 500px; height: 300px;" /><br />
+           <img alt="" src="./images/tree2.jpg" th:src="@{/images/tree2.jpg}" style="width: 500px; height: 300px;" /><br />
                 图1 四种不同的失衡情况</div>
        <p><b>LL旋转操作</b></p>
          <ul>
@@ -274,7 +274,7 @@
     </ul>
       <div style="text-align: center;" >
           <!--图片区域-->
-          <img src="../static/images/tree3.jpg" th:src="@{/images/tree3.jpg}" style="width: 400px; height: 200px;"><br />
+          <img src="./images/tree3.jpg" th:src="@{/images/tree3.jpg}" style="width: 400px; height: 200px;"><br />
           图2.LL旋转操作
       </div>
               <pre class="language-css"><code class="language-css">
@@ -292,7 +292,7 @@
         <p>和LL是对称的(把上述代码的left和right全部互换即可)</p>
       <div style="text-align: center;" >
           <!--图片区域-->
-          <img src="../static/images/tree4.jpg" th:src="@{/images/tree4.jpg}" style="width: 400px; height: 200px;"><br />
+          <img src="./images/tree4.jpg" th:src="@{/images/tree4.jpg}" style="width: 400px; height: 200px;"><br />
           图3.RR旋转操作
       </div>
               <pre class="language-css"><code class="language-css">
@@ -312,7 +312,7 @@
      <p>因此分为两步：第一，先将root的左子树做一次RR旋转，使其变为LL型；然后第二步，将root做一次LL旋转。</p>
       <div style="text-align: center;" >
           <!--图片区域-->
-          <img src="../static/images/tree5.jpg" th:src="@{/images/tree5.jpg}" style="width: 400px; height: 200px;"><br />
+          <img src="./images/tree5.jpg" th:src="@{/images/tree5.jpg}" style="width: 400px; height: 200px;"><br />
           图4.LR旋转操作
       </div>
               <pre class="language-css"><code class="language-css">
@@ -367,7 +367,7 @@ void CBinTree(int root,int N){
                 </ui>
               </div>
               <div class="five wide column">
-                <img src="../static/images/wechat.jpg" th:src="@{/images/graph.jpg}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+                <img src="./images/wechat.jpg" th:src="@{/images/graph.jpg}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
               </div>
           </div>
       </div>
@@ -503,7 +503,7 @@ void CBinTree(int root,int N){
             <div  class="three wide column ">
                 <div class="ui inverted  link list">
                     <div class="item">
-                        <img src="../static/images/wechat.jpg" th:src="@{/images/graph.jpg}" class="ui rounded image " alt="" width="100px" height="100px""/>
+                        <img src="./images/wechat.jpg" th:src="@{/images/graph.jpg}" class="ui rounded image " alt="" width="100px" height="100px""/>
                     </div>
                 </div>
             </div>
@@ -535,9 +535,9 @@ void CBinTree(int root,int N){
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 <!--<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>-->
 
-<script src="..//static/lib/prism/prism.js"></script>
-<script src="..//static/lib/tocbot/tocbot.min.js"></script>
-<script src="..//static/lib/qrcode/qrcode.min.js"></script>
+<script src="./lib/prism/prism.js"></script>
+<script src="./lib/tocbot/tocbot.min.js"></script>
+<script src="./lib/qrcode/qrcode.min.js"></script>
 
 <script>
 

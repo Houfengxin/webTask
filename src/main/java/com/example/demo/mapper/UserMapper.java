@@ -14,7 +14,7 @@ public interface UserMapper {
     @Select("select * from user where username=#{username}")
     User finduserbyname(String username );
     @Select("select * from user where username=#{username} and password=#{password}")
-    User checkuser(String username, String password );
+    User login(String username, String password );
     @Update("update user set token=#{token} where username=#{username}")
     void updateUser(User user);
 }

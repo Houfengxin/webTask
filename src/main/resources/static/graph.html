@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>图详情</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
-    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
-    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
-    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="./css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="./lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="./lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" href="./css/me.css" th:href="@{/css/me.css}">
     <style>
         p{
             text-indent: 2em !important;
@@ -22,12 +22,12 @@
       <!--为了适应手机端查看页面，添加stackable属性，代表可堆叠，给grid之前加上stackable-->
       <div class="ui inverted secondary stackable menu">
         <h2 class="ui teal header item">数据结构</h2>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>线性表</a>
+          <a href="linear.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>线性表</a>
           <a href="array.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>数组</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>散列表</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>树</a>
-          <a href="#" class="active m-item item m-mobile-hide"><i class="mini file alternate icon"></i>图</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>算法</a>
+          <a href="hash.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>散列表</a>
+          <a href="tree.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>树</a>
+          <a href="graph.html" class="active m-item item m-mobile-hide"><i class="mini file alternate icon"></i>图</a>
+          <a href="algorithm.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>算法</a>
           <div class="right m-item item m-mobile-hide">
               <!-- transparent搜索框显示为透明 inverted颜色反转 -->
               <div class="ui icon inverted transparent input">
@@ -64,7 +64,7 @@
       </div>
       <div class="ui  attached segment">
           <!--图片区域-->
-          <img src="../static/images/graph.jpg" th:src="@{/images/graph.jpg}" alt="" class="ui fluid rounded image">
+          <img src="./images/graph.jpg" th:src="@{/images/graph.jpg}" alt="" class="ui fluid rounded image">
       </div>
       <div class="ui attached padded segment">
           <!--内容部分-->
@@ -118,7 +118,7 @@
         GraphKind kind;            //记录图的种类
      }MGraph;</code></pre>
           <div style="text-align: center;">
-           <img alt="" src="../static/images/graph-1.png" th:src="@{/images/graph-1.png}" style="width: 420px; height: 186px;" /><br />
+           <img alt="" src="./images/graph-1.png" th:src="@{/images/graph-1.png}" style="width: 420px; height: 186px;" /><br />
                 图1 有向图和无向图</div>
             <h5>图的邻接表存储法</h5>
              <p>邻接表存储图的实现方式是，给图中的各个顶点独自建立一个链表，用节点存储该顶点，用链表中其他节点存储各自的临界点。</p>
@@ -130,7 +130,7 @@
             <p>对于利用邻接表求某顶点的入度，有两种方式：遍历整个邻接表中的节点，统计数据域与该顶点所在数组位置下标相同的节点数量，即为该顶点的入度；
             建立一个逆邻接表，该表中的各顶点链表专门用于存储以此顶点为弧头的所有顶点在数组中的位置下标。比如说，建立一张图对应的逆邻接表，如图2所示：</p>
               <div style="text-align: center;">
-           <img alt="" src="../static/images/graph-2.gif" th:src="@{/images/graph-2.gif}" style="width: 420px; height: 186px;" /><br />
+           <img alt="" src="./images/graph-2.gif" th:src="@{/images/graph-2.gif}" style="width: 420px; height: 186px;" /><br />
                 图2 逆邻接表示意图</div>
             <br/>
             <h5>图的十字链表存储</h5>
@@ -140,7 +140,7 @@
                其中，建立个各个链表中用于存储顶点的首元节点结构如图 3 所示：
                   <div style="text-align: center;">
                 <br />
-                <img alt="十字链表中首元节点结构示意图" src="../static/images/graph-3.gif" th:src="@{/images/graph-3.gif}" /><br />
+                <img alt="十字链表中首元节点结构示意图" src="./images/graph-3.gif" th:src="@{/images/graph-3.gif}" /><br />
                 图 3 十字链表中首元节点结构示意图</div>
               <br/>
               从图 3 可以看出，首元节点中有一个数据域和两个指针域（分别用 firstin 和 firstout 表示）：
@@ -159,7 +159,7 @@
                   问到。类似于树的先序遍历。</p>
                <div style="text-align: center;">
                 <br />
-                <img alt="十字链表中首元节点结构示意图" src="../static/images/graph-4.png" th:src="@{/images/graph-4.png}"/><br />
+                <img alt="十字链表中首元节点结构示意图" src="./images/graph-4.png" th:src="@{/images/graph-4.png}"/><br />
                 图 4 无向图</div>
               <br/>
              <p>深度优先搜索的过程类似于树的先序遍历，首先从例子中体会深度优先搜索。例如图4是一个无向图，采用深度优先算法遍历这个图的过程为：</p>
@@ -232,7 +232,7 @@
     <br>
     <div style="text-align: center;">
       <br />
-      <img alt="十字链表中首元节点结构示意图" src="../static/images/graph-5.png" th:src="@{/images/graph-5.png}"/><br />
+      <img alt="十字链表中首元节点结构示意图" src="./images/graph-5.png" th:src="@{/images/graph-5.png}"/><br />
       图 5 克鲁斯卡尔算法构造最小生成树</div>
      <br/>
     <p>结构体数组Edge:存储边的信息，包括边的两个顶点信息和权值。</p>
@@ -290,7 +290,7 @@
     </ul>
      <div style="text-align: center;">
       <br />
-      <img alt="普里姆算法构造最小生成树" src="../static/images/graph-6.png" th:src="@{/images/graph-6.png}" /><br />
+      <img alt="普里姆算法构造最小生成树" src="./images/graph-6.png" th:src="@{/images/graph-6.png}" /><br />
        图 6 普里姆算法构造最小生成树</div>
      算法步骤：<br>
     <p>为实现这个算法需附设一个辅助数组closedge,以记录从U到V-U具有最小权值的边。对每个顶点vi∈V-U，在辅助数组中存在一个相应分量
@@ -351,7 +351,7 @@
                 </ui>
               </div>
               <div class="five wide column">
-                <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+                <img src="./images/wechat.jpg" th:src="@{/images/wechat.jpg}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
               </div>
           </div>
       </div>
@@ -487,7 +487,7 @@
             <div  class="three wide column ">
                 <div class="ui inverted  link list">
                     <div class="item">
-                        <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" class="ui rounded image " alt="" width="100px" height="100px""/>
+                        <img src="./images/wechat.jpg" th:src="@{/images/wechat.jpg}" class="ui rounded image " alt="" width="100px" height="100px""/>
                     </div>
                 </div>
             </div>
@@ -519,9 +519,9 @@
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 <!--<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>-->
 
-<script src="..//static/lib/prism/prism.js"></script>
-<script src="..//static/lib/tocbot/tocbot.min.js"></script>
-<script src="..//static/lib/qrcode/qrcode.min.js"></script>
+<script src="./lib/prism/prism.js"></script>
+<script src="./lib/tocbot/tocbot.min.js"></script>
+<script src="./lib/qrcode/qrcode.min.js"></script>
 
 <script>
 

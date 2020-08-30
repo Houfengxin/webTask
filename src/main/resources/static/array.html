@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>数组详情</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="../static/css/typo.css">
-    <link rel="stylesheet" href="../static/lib/prism/prism.css">
-    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
-    <link rel="stylesheet" href="../static/css/me.css">
+    <link rel="stylesheet" href="./css/typo.css">
+    <link rel="stylesheet" href="./lib/prism/prism.css">
+    <link rel="stylesheet" href="./lib/tocbot/tocbot.css">
+    <link rel="stylesheet" href="./css/me.css">
     <style>
         p{
             text-indent: 2em !important;
@@ -22,12 +22,12 @@
       <!--为了适应手机端查看页面，添加stackable属性，代表可堆叠，给grid之前加上stackable-->
       <div class="ui inverted secondary stackable menu">
         <h2 class="ui teal header item">数据结构</h2>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file icon"></i>线性表</a>
-          <a href="#" class="active m-item item m-mobile-hide"><i class="mini file icon"></i>数组</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file icon"></i>散列表</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file icon"></i>树</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file icon"></i>图</a>
-          <a href="#" class="m-item item m-mobile-hide"><i class="mini file icon"></i>算法</a>
+          <a href="linear.html" class="m-item item m-mobile-hide"><i class="mini file icon"></i>线性表</a>
+          <a href="array.html" class="active m-item item m-mobile-hide"><i class="mini file icon"></i>数组</a>
+          <a href="hash.html" class="m-item item m-mobile-hide"><i class="mini file icon"></i>散列表</a>
+          <a href="tree.html" class="m-item item m-mobile-hide"><i class="mini file icon"></i>树</a>
+          <a href="graph.html" class="m-item item m-mobile-hide"><i class="mini file icon"></i>图</a>
+          <a href="algorithm.html" class="m-item item m-mobile-hide"><i class="mini file icon"></i>算法</a>
           <div class="right m-item item m-mobile-hide">
               <!-- transparent搜索框显示为透明 inverted颜色反转 -->
               <div class="ui icon inverted transparent input">
@@ -64,7 +64,7 @@
       </div>
       <div class="ui  attached segment">
           <!--图片区域-->
-          <img src="../static/images/array.png" alt="" class="ui fluid rounded image">
+          <img src="./images/array.png" alt="" class="ui fluid rounded image">
       </div>
       <div class="ui attached padded segment">
           <!--内容部分-->
@@ -100,7 +100,7 @@
               <p>插入可以分为尾部新增和中间插入两种情况，中间插入元素本质是将 至最后一个索引对应的元素全部向后移动一位。</p>
               <div style="text-align: center;">
       <br />
-      <img alt="数组的插入" src="../static/images/array1.png" /><br />
+      <img alt="数组的插入" src="./images/array1.png" /><br />
        图 1 数组的插入</div>
               <p>不过插入元素时需要扩容。扩容，就是扩大数组的长度。当插入元素时，若发现数组长度已满，此时需要扩容数组，操作为创建一个
                   新的同类型的数组，长度为原来的2倍，将原始数组的元素拷贝到新数组中，此时即可插入新元素。</p>
@@ -346,7 +346,7 @@ public class DemoArray {
                 </ui>
               </div>
               <div class="five wide column">
-                <img src="../static/images/wechat.jpg" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+                <img src="./images/wechat.jpg" alt="" class="ui right floated rounded bordered image" style="width: 110px">
               </div>
           </div>
       </div>
@@ -482,7 +482,7 @@ public class DemoArray {
             <div  class="three wide column ">
                 <div class="ui inverted  link list">
                     <div class="item">
-                        <img src="../static/images/wechat.jpg" class="ui rounded image " alt="" width="100px" height="100px""/>
+                        <img src="./images/wechat.jpg" class="ui rounded image " alt="" width="100px" height="100px""/>
                     </div>
                 </div>
             </div>
@@ -514,9 +514,9 @@ public class DemoArray {
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 <!--<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>-->
 
-<script src="..//static/lib/prism/prism.js"></script>
-<script src="..//static/lib/tocbot/tocbot.min.js"></script>
-<script src="..//static/lib/qrcode/qrcode.min.js"></script>
+<script src="./lib/prism/prism.js"></script>
+<script src="./lib/tocbot/tocbot.min.js"></script>
+<script src="./lib/qrcode/qrcode.min.js"></script>
 
 <script>
 
