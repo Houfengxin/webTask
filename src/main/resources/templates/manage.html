@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>管理界面</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{../css/me.css}">
+
+</head>
+<body >
+<nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <!--为了适应手机端查看页面，添加stackable属性，代表可堆叠，给grid之前加上stackable-->
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">数据结构</h2>
+            <a href="linear.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>线性表</a>
+            <a href="array.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>数组</a>
+            <a href="hash.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>散列表</a>
+            <a href="tree.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>树</a>
+            <a href="graph.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>图</a>
+            <a href="algorithm.html" class="m-item item m-mobile-hide"><i class="mini file alternate icon"></i>算法</a>
+            <div class="right m-item item m-mobile-hide">
+                <!-- transparent搜索框显示为透明 inverted颜色反转 -->
+                <div class="ui icon inverted transparent input">
+                    <a href="management.html" class="active m-item item m-mobile-hide"><i class="mini cog icon"></i>管理平台</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--点击再显示，加一个图标  menu toggle只是为了使用，另一种方法也可以用id  -->
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<h1>欢迎进入知识点管理界面</h1>
+<div class="m-container m-padded-tb-big">
+    <div class="ui container">
+        <!--    增加知识点-->
+        <form action="/adddata" method="post">
+            <section>
+                <p class="step">增加知识点</p>
+                <p class="form-line">
+                    <span>知识点名称</span>
+                    <input type="text" name="dataname" placeholder="知识点名称">
+                </p>
+                <p class="form-line">
+                    <span>知识点概述</span>
+                    <textarea name="define"  placeholder="请输入..."></textarea>
+                </p>
+                <p class="form-line">
+                    <span>知识点详解</span>
+                    <textarea  name="content" placeholder="请输入..."></textarea>
+                </p>
+
+            </section>
+            <input type="submit"  value="添加文章">
+        </form>
+
+        <h2 th:utext="${msg3}"></h2>
+
+        <br>
+        <br>
+        <!--    删除知识点-->
+        <form action="/deletedata" method="post">
+            <section>
+                <p class="step">删除知识点</p>
+                <p class="form-line">
+                    <span>知识点名称</span>
+                    <input type="text" name="dataname" placeholder="知识点名称">
+                </p>
+            </section>
+            <input type="submit"  value="删除文章">
+        </form>
+
+        <h2 th:utext="${msg5}"></h2>
+        <br>
+        <br>
+
+        <!--    更新知识点-->
+        <form action="/updatedata" method="post">
+            <section>
+                <p class="step">更新知识点</p>
+                <p class="form-line">
+                    <span>知识点名称</span>
+                    <input type="text" name="dataname" placeholder="知识点名称">
+                </p>
+                <p class="form-line">
+                    <span>知识点概述</span>
+                    <textarea  name="define" ></textarea>
+                </p>
+                <p class="form-line">
+                    <span>知识点详解</span>
+                    <textarea  name="content" ></textarea>
+                </p>
+            </section>
+            <input type="submit"  value="更新文章" >
+        </form>
+
+        <h2 th:utext="${msg6}"></h2>
+        <br>
+        <br>
+        <!--    查找知识点-->
+        <form action="/getdata" method="post">
+            <section>
+                <p class="step">查找知识点</p>
+                <p class="form-line">
+                    <span>知识点名称</span>
+                    <input type="text" name="dataname" placeholder="知识点名称">
+                </p>
+            </section>
+            <input type="submit"  value="查找文章">
+        </form>
+
+        <h2 th:utext="${msg4}"></h2>
+    </div>
+</div>
+<!--底部-->
+<footer class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui  center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <!--grid分成16份，9份做三个盒子，剩下7份为一个盒子-->
+            <div  class="three wide column ">
+                <div class="ui inverted  link list">
+                    <div class="item">
+                        <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" class="ui rounded image " alt="" width="100px" height="100px"/>
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-space ">最新博客</h4>
+                <div class="ui inverted  link list">
+                    <a href="#" class="item">生活的价值</a>
+                    <a href="#" class="item">学习的动力</a>
+                    <a href="#" class="item">向上的勇气</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-space ">联系我</h4>
+                <div class="ui inverted  link list">
+                    <a href="#" class="item">Email:18192062162@163.com</a>
+                    <a href="#" class="item">QQ:2632995044</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-text-thin m-text-space">Blog</h4>
+                <p class="m-text-thin m-text-space m-opacity-mini">这是我的个人知识整理，会分享关于数据结构相关的内容，希望可以给大家提供帮助。</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-space m-opacity-tiny">©2020 本博客仅用于个人学习使用，不得用于其他商业用途，违反者必将追究法律责任。</p>
+    </div>
+</footer>
+
+</body>
+</html>
